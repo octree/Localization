@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func selectLanguage(_ sender: Any) {
-        let avc = UIAlertController(title: "Language", message: nil, preferredStyle: .actionSheet)
+        let avc = UIAlertController(title: "Language".localized(), message: nil, preferredStyle: .actionSheet)
         let languages = Language.availableLanguages()
         avc.addAction(UIAlertAction(title: "System", style: .default, handler: { _ in
             LocalizationPreference.current = .followSystem

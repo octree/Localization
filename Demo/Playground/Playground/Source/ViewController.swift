@@ -29,7 +29,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var label: UILabel!
-    @IBOutlet weak var label2: UILabel!
+    @IBOutlet var label2: UILabel!
     @IBOutlet var languageButton: UIButton!
 
     override func viewDidLoad() {
@@ -37,10 +37,19 @@ class ViewController: UIViewController {
         label.l10n.text.bind(.pure("Hello"))
         languageButton.l10n.title(for: .normal).bind(key: "Language")
         label.l10n.text.bind(.pure("Hello"))
-        let localizer = Localizer.pure("Part 1")
-            .combine(.pure("Part 2"))
-            .map { $0 + " " + $1 }
-            .map { NSAttributedString(string: $0, attributes: [.foregroundColor: UIColor.systemPink]) }
+
+//        let localizer = Localizer.pure("Part 1")
+//            .combine(.pure("Part 2"))
+//            .map { $0 + " " + $1 }
+//            .map { NSAttributedString(string: $0, attributes: [.foregroundColor: UIColor.systemPink]) }
+
+        let localizer = Localizer {
+            "Part 1"
+            "Part 2"
+        } transform: {
+            NSAttributedString(string: $0 + " " + $1, attributes: [.foregroundColor: UIColor.systemPink])
+        }
+
         label2.l10n.attributedText.bind(localizer)
     }
 

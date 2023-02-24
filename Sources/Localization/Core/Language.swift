@@ -38,6 +38,7 @@ public struct Language: RawRepresentable, Equatable {
 }
 
 // MARK: - ExpressibleByStringLiteral
+
 extension Language: ExpressibleByStringLiteral {
     public init(stringLiteral value: StringLiteralType) {
         rawValue = value
@@ -45,6 +46,7 @@ extension Language: ExpressibleByStringLiteral {
 }
 
 // MARK: - Codable
+
 extension Language: Codable {
     public func encode(to encoder: Encoder) throws {
         var single = encoder.singleValueContainer()
@@ -58,6 +60,7 @@ extension Language: Codable {
 }
 
 // MARK: - Definitions
+
 public extension Language {
     static var arabic: Language { "ar" }
     static var catalan: Language { "ca" }

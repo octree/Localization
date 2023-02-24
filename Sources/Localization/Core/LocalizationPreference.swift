@@ -19,9 +19,11 @@ public enum LocalizationPreference {
 public extension LocalizationPreference {
     /// The in app preferred language
     private static var specifiedLanguage: Language? = UserDefaults.standard.string(forKey: "SpecifiedCurrentLanguageKey")
-        .map { Language(rawValue: $0) } {
+        .map { Language(rawValue: $0) }
+    {
         didSet {
             UserDefaults.standard.set(specifiedLanguage?.rawValue, forKey: "SpecifiedCurrentLanguageKey")
+            UserDefaults.standard.synchronize()
         }
     }
 

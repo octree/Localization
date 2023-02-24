@@ -42,6 +42,7 @@ public struct Localizer<Output> {
 }
 
 // MARK: - Pure
+
 public extension Localizer where Output == String {
     /// A ``Localizer`` that produces a localized string from a table that Xcode generates.
     /// - Parameters:
@@ -57,6 +58,7 @@ public extension Localizer where Output == String {
 }
 
 // MARK: - Functor
+
 public extension Localizer {
     /// Return a localizer producing the result of mapping the given closure over the localizer's output.
     /// - Parameter transform: A mapping closure. transform accepts output of this localizer as its parameter and returns a transformed value of the same or of a different type.
@@ -69,6 +71,7 @@ public extension Localizer {
 }
 
 // MARK: - Monad
+
 public extension Localizer {
     /// Transforms the output from a upstream localizer into a new localizer
     /// - Parameter transform: A closure that takes the output as a parameter and returns a localizer that produces output of that type
@@ -81,6 +84,7 @@ public extension Localizer {
 }
 
 // MARK: - Combine
+
 public extension Localizer {
     /// Combine with an additional localizer and produces a tuple upon output from either localizer
     /// - Parameter other: Another localizer to combine with this one.
@@ -104,6 +108,7 @@ public extension Localizer {
 }
 
 // MARK: - Combine List
+
 public extension Localizer {
     /// Combine a list of localizers and produces a list of output from any of the localizers
     /// - Parameter list: A list of localizers to combine

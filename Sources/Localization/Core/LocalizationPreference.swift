@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 /// In app language preference
-public enum LocalizationPreference {
+public enum LocalizationPreference: Hashable, Equatable {
     /// Dependent on the system preferences
     case followSystem
     /// The in app language preference

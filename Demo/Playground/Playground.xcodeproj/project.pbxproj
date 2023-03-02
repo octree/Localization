@@ -383,7 +383,7 @@
 				CODE_SIGN_ENTITLEMENTS = Playground/Playground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A4J2K2SAMH;
+				DEVELOPMENT_TEAM = 7A5GV3DH33;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Playground/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -414,7 +414,7 @@
 				CODE_SIGN_ENTITLEMENTS = Playground/Playground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A4J2K2SAMH;
+				DEVELOPMENT_TEAM = 7A5GV3DH33;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Playground/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

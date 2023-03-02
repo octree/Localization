@@ -28,7 +28,7 @@ import Foundation
 
 /// A model that represents a specific language
 /// The rawValue is the language code
-public struct Language: RawRepresentable, Equatable {
+public struct Language: RawRepresentable, Hashable, Equatable {
     public typealias RawValue = String
     public var rawValue: String
 

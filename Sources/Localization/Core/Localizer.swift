@@ -32,7 +32,7 @@ import Foundation
 /// Essentially it seems like a `Reader Monad` without environment.
 public struct Localizer<Output> {
     var thunk: () -> Output
-    init(_ thunk: @escaping () -> Output) {
+    public init(_ thunk: @escaping () -> Output) {
         self.thunk = thunk
     }
 

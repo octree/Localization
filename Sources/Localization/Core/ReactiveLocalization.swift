@@ -64,7 +64,7 @@ public class ReactiveLocalization<Base: AnyObject> {
 }
 
 private enum LocalizationAssociatedKey {
-    static var reactive: String = "LocalizationReactiveAssociatedKey"
+    static let reactive = malloc(1)!
 }
 
 ///  A type that has reactive localization extensions.
@@ -75,12 +75,12 @@ public protocol ReactiveLocalizationCompatible: AnyObject {
 
 public extension ReactiveLocalizationCompatible {
     var l10n: ReactiveLocalization<Self> {
-        if let localize = objc_getAssociatedObject(self, &LocalizationAssociatedKey.reactive) as? ReactiveLocalization<Self> {
+        if let localize = objc_getAssociatedObject(self, LocalizationAssociatedKey.reactive) as? ReactiveLocalization<Self> {
             return localize
         }
 
         let localize = ReactiveLocalization(self)
-        objc_setAssociatedObject(self, &LocalizationAssociatedKey.reactive, localize, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, LocalizationAssociatedKey.reactive, localize, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return localize
     }
 }
